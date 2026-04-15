@@ -401,9 +401,9 @@ cat("SAVING RESULTS\n")
 cat(paste(rep("=", 78), collapse = ""), "\n\n")
 
 save(results, v_min, v_max, example_cases,
-     file = "results/numerical_proof_results.RData")
+     file = "results/action_set_results.RData")
 
-write.csv(results, "results/numerical_proof_table.csv", row.names = FALSE)
+write.csv(results, "results/action_set_table.csv", row.names = FALSE)
 
 summary_stats <- data.frame(
   metric = c("Total cases", "All action", "Single upper tail", 
@@ -415,8 +415,8 @@ summary_stats <- data.frame(
 write.csv(summary_stats, "results/summary_statistics.csv", row.names = FALSE)
 
 cat("✓ Results saved:\n")
-cat("  - results/numerical_proof_results.RData\n")
-cat("  - results/numerical_proof_table.csv\n")
+cat("  - results/action_set_results.RData\n")
+cat("  - results/action_set_table.csv\n")
 cat("  - results/summary_statistics.csv\n\n")
 
 cat("✓ Numerical characterization complete\n\n")
