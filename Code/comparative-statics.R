@@ -43,21 +43,6 @@ H <- function(v, S, delta) {
   return(G(v, S) - C(v, delta))
 }
 
-cat("THEORETICAL BACKGROUND\n")
-cat(paste(rep("-", 78), collapse = ""), "\n\n")
-
-cat("Proposition 4 establishes the structure of the action region a*(v; S, δ).\n")
-cat("Part (i) is proven analytically via Lemmas 2 and 3.\n")
-cat("Parts (ii)-(iv) are established via systematic numerical exploration.\n\n")
-
-cat("FROM PAPER:\n")
-cat("'A complete analytic classification of parameter regions that produce\n")
-cat("multiple disjoint intervals requires a detailed analysis of H'(v); that\n")
-cat("calculation is routine but lengthy, and is being developed in ongoing work.\n")
-cat("Comprehensive numerical verification across 9,950 parameter combinations\n")
-cat("is presented in Appendix B, confirming the regime structure described in\n")
-cat("Proposition 4(ii)-(iv).'\n")
-cat("[Primary_Competition_(12).pdf, Proposition 4 text]\n\n")
 
 cat(sprintf("Loaded numerical results: %d parameter combinations\n", nrow(results)))
 cat(sprintf("Parameter ranges: δ ∈ [%.2f, %.2f], S ∈ [%.0f, %.0f], v ∈ [%d, %d]\n\n",
