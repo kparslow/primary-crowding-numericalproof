@@ -1,20 +1,13 @@
 ################################################################################
 ################## NUMERICAL VERIFICATION: COMPARATIVE STATICS ##################
 ################################################################################
-# Last Updated: 4/13/2026, 2:55 PM
+# Last Updated: 4/14/2026, 10:30 PM
 # Author: Katherine Parslow
 #
 # PURPOSE: Provide numerical verification that Corollary 5 predictions hold
 #          across the parameter space. Quantify relative magnitudes of effects.
 #
-# FROM THEORY: 
-#   Corollary 5 predicts ∂v*/∂δ > 0 and ∂v*/∂S < 0
-#   [Primary_Competition_(12).pdf, Corollary 5]
-#   
-# THIS APPENDIX: Tests whether these directions hold and quantifies magnitudes
-#   across 9,950 parameter combinations.
-#
-# REQUIRES: Must run numerical_proof.R first to generate results/
+# REQUIRES: Must run action_set_simulation.R first to generate results/
 ################################################################################
 
 cat("\n")
@@ -27,11 +20,11 @@ cat(paste(rep("=", 78), collapse = ""), "\n\n")
 # SETUP
 # ==============================================================================
 
-if (!file.exists("results/numerical_proof_results.RData")) {
-  stop("Error: Run numerical_proof.R first to generate results/")
+if (!file.exists("results/action_set_results.RData")) {
+  stop("Error: Run action_set_simulation.R first to generate results/")
 }
 
-load("results/numerical_proof_results.RData")
+load("results/action_set_results.RData")
 
 # Load functions
 G <- function(v, S) {
