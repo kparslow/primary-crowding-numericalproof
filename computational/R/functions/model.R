@@ -113,3 +113,14 @@ choose_a <- function(v, S, delta, tie_break = c("one", "zero")) {
   d <- Delta_incentive(v, S, delta)
   ifelse(d > 0, 1L, ifelse(d < 0, 0L, if (tie_break == "one") 1L else 0L))
 }
+
+
+# Convenience wrappers (logS-first)
+p0_logS <- function(v, logS) p0(v, S = exp(logS))
+p1_logS <- function(v, logS) p1(v, S = exp(logS))
+u0_logS <- function(v, logS) u0(v, S = exp(logS))
+u1_logS <- function(v, logS, delta) u1(v, S = exp(logS), delta = delta)
+Delta_logS <- function(v, logS, delta) Delta_incentive(v, S = exp(logS), delta = delta)
+choose_a_logS <- function(v, logS, delta, tie_break = c("one","zero")) {
+  choose_a(v, S = exp(logS), delta = delta, tie_break = tie_break)
+}
