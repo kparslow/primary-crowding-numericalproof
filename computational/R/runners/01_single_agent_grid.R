@@ -4,6 +4,7 @@
 
 source("computational/R/functions/model.R")
 source("computational/R/functions/grids.R")
+source("computational/R/functions/manifest.R")
 
 # For calibration / economically relevant parameter scaling, we assume intrinsic valence
 # v ~ N(0, sigma^2), where sigma is the standard deviation of candidate valence.
@@ -51,3 +52,42 @@ outfile <- file.path(out_dir, "single_agent_grid.csv")
 utils::write.csv(out_df, outfile, row.names = FALSE)
 
 message("Wrote: ", outfile)
+
+# Manifest
+run_id <- paste0(
+  "01_single_agent_grid__",
+  format(Sys.time(), tz = "UTC", "%Y-%m-%dT%H%M%SZ")
+)
+
+out_info <- list(
+  list(
+    path = outfile,
+    bytes = unname(file.info(outfile)$size),
+    sha256 = sha256_file(outfile)
+  )
+)
+
+manifest_path <- file.path("computational", "output", "manifests", paste0(run_id, ".json"))
+
+write_manifest_json(
+  manifest_path = manifest_path,
+  run_id = run_id,
+  script_path = "computational/R/runners/01_single_agent_grid.R",
+  parameters = list(
+    sigma = sigma,
+    v_min = -4 * sigma,
+    v_max =  4 * sigma,
+    n_v = 1201,
+    logS_min = -4 * sigma,
+    logS_max =  4 * sigma,
+    n_logS = 41,
+    delta_min = 0.1 * sigma,
+    delta_max = 2.5 * sigma,
+    n_delta = 41,
+    a_star_rule = "1{Delta >= 0}"
+  ),
+  outputs = out_info
+)
+
+message("Wrote manifest: ", manifest_path)
+
