@@ -1,0 +1,90 @@
+\section{Best response condition}
+
+In the reduced-form environment, fix opponents' behavior $(\vminus,\aminus)$ and hence fix the
+opponents' strength aggregator $\Sagg = \Sof{\vminus}{\aminus} > 0$ (Definition~\ref{def:Sof}).
+Fix also $\delta>0$. Candidate $i$'s problem is then a binary choice between $a=0$ and $a=1$.
+
+\subsection{Best response in difference form}
+
+\begin{prop}[Reduced-form best response]\label{prop:br}
+Fix $\Sagg >0$ and $\delta > 0$. A candidate with valence $v$ chooses $a = 1$ if and only if
+\[
+    \Deltainc{v}{\Sagg} \ge 0,
+\]
+where $\Deltainc{v}{\Sagg}$ is defined in Definition~\ref{def:Delta}.
+\end{prop}
+
+\begin{remark*}
+This is a one-shot best-response condition: holding opponents fixed, the candidate takes the action
+that maximizes the probability of ultimately winning office. Since the action set is $\{0,1\}$, it is
+sufficient to compare expected utility under $a=1$ and $a=0$.
+\end{remark*}
+
+\begin{proof}
+By Definition~\ref{def:Urf}, the reduced-form expected payoff from action $a$ is
+$U_a(v;\Sagg,\delta) = \pnom{a}{v}{\Sagg}\Pge{v}{\delta}{a}$.
+Thus $a=1$ is optimal if and only if
+\[
+    U_1(v;\Sagg,\delta) - U_0(v;\Sagg,\delta) \ge 0,
+\]
+which is exactly $\Deltainc{v}{\Sagg} \ge 0$ by Definition~\ref{def:Delta}.
+\end{proof}
+
+\subsection{Best response in ratio form (gain vs.\ cost)}
+
+\begin{corollary}[Best-response as proportional gains and losses]\label{cor:BR}
+Fix $\Sagg > 0$ and $\delta >0$. A candidate with valence $v$ chooses $a = 1$ if and only if
+\[
+    \Gfun{v}{\Sagg} \ge \Cfun{v}{\delta},
+\]
+where $\Gfun{v}{\Sagg}$ and $\Cfun{v}{\delta}$ are defined in
+Definitions~\ref{def:Gbasic} and \ref{def:Cbasic}.
+\end{corollary}
+
+\begin{remark*}
+The ratio condition cleanly separates the forces in the candidate's decision:
+$\Gfun{v}{\Sagg}$ is the proportional gain in nomination probability from taking $a=1$,
+while $\Cfun{v}{\delta}$ is the proportional loss in general-election win probability.
+The candidate takes $a=1$ exactly when the primary-stage gain outweighs the general-election cost.
+\end{remark*}
+
+\begin{proof}
+Start from $\Deltainc{v}{\Sagg} \ge 0$, i.e.
+\[
+    \pOne{v}{\Sagg}\PhiStd(v-\delta) \ge \pZero{v}{\Sagg}\PhiStd(v).
+\]
+Since $\pZero{v}{\Sagg}>0$ and $\PhiStd(v-\delta)>0$, divide both sides by
+$\pZero{v}{\Sagg}\PhiStd(v-\delta)$ to obtain
+\[
+    \frac{\pOne{v}{\Sagg}}{\pZero{v}{\Sagg}} \ge \frac{\PhiStd(v)}{\PhiStd(v-\delta)},
+\]
+which is $\Gfun{v}{\Sagg} \ge \Cfun{v}{\delta}.
+\]
+\end{proof}
+
+\subsection{Best response in log form}
+
+\begin{corollary}[Best-response in log form]\label{cor:BRlog}
+Fix $\Sagg > 0$ and $\delta >0$. A candidate with valence $v$ chooses $a = 1$ if and only if
+\[
+    \logg{\Gfun{v}{\Sagg}} \ge \logg{\Cfun{v}{\delta}},
+\]
+i.e.
+\[
+    \logg{\pOne{v}{\Sagg}} - \logg{\pZero{v}{\Sagg}}
+    \;\ge\;
+    \logg{\PhiStd(v)} - \logg{\PhiStd(v-\delta)}.
+\]
+\end{corollary}
+
+\begin{remark*}
+The log form can be numerically convenient: it converts the multiplicative gain--cost comparison
+into an additive inequality. This is often more stable in simulations when probabilities are close
+to $0$ or $1$.
+\end{remark*}
+
+\begin{proof}
+By Corollary~\ref{cor:BR}, $a=1$ is optimal if and only if $\Gfun{v}{\Sagg} \ge \Cfun{v}{\delta}$.
+Since $\Gfun{v}{\Sagg}>0$ and $\Cfun{v}{\delta}>0$, taking $\log$ of both sides yields the stated
+inequality. Expanding $\Gfun{v}{\Sagg}$ and $\Cfun{v}{\delta}$ gives the final expression.
+\end{proof}
