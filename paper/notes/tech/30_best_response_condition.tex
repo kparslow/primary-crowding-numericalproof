@@ -41,12 +41,11 @@ where $\Gfun{v}{\Sagg}$ and $\Cfun{v}{\delta}$ are defined in
 Definitions~\ref{def:Gbasic} and \ref{def:Cbasic}.
 \end{corollary}
 
-\begin{remark*}
 The ratio condition cleanly separates the forces in the candidate's decision:
 $\Gfun{v}{\Sagg}$ is the proportional gain in nomination probability from taking $a=1$,
 while $\Cfun{v}{\delta}$ is the proportional loss in general-election win probability.
 The candidate takes $a=1$ exactly when the primary-stage gain outweighs the general-election cost.
-\end{remark*}
+
 
 \begin{proof}
 Start from $\Deltainc{v}{\Sagg} \ge 0$, i.e.
@@ -58,8 +57,7 @@ $\pZero{v}{\Sagg}\PhiStd(v-\delta)$ to obtain
 \[
     \frac{\pOne{v}{\Sagg}}{\pZero{v}{\Sagg}} \ge \frac{\PhiStd(v)}{\PhiStd(v-\delta)},
 \]
-which is $\Gfun{v}{\Sagg} \ge \Cfun{v}{\delta}.
-\]
+which is $\Gfun{v}{\Sagg} \ge \Cfun{v}{\delta}$.
 \end{proof}
 
 \subsection{Best response in log form}
@@ -77,11 +75,11 @@ i.e.
 \]
 \end{corollary}
 
-\begin{remark*}
-The log form can be numerically convenient: it converts the multiplicative gain--cost comparison
-into an additive inequality. This is often more stable in simulations when probabilities are close
+
+The log form is numerically convenient: it converts the multiplicative gain--cost comparison
+into an additive inequality. This is more stable in simulations when probabilities are close
 to $0$ or $1$.
-\end{remark*}
+
 
 \begin{proof}
 By Corollary~\ref{cor:BR}, $a=1$ is optimal if and only if $\Gfun{v}{\Sagg} \ge \Cfun{v}{\delta}$.

@@ -1,9 +1,9 @@
-\section*{Reduced-form objects}
+\section{Reduced-form objects}
 
 Throughout this section, fix a candidate $i$ and fix the opponents' profile $(\vminus,\aminus)$.
 Let $\PhiStd(\cdot)$ denote the standard normal CDF.
 
-\subsection*{Opponents' strength aggregator}
+\subsection{Opponents' strength aggregator}
 \begin{definition}[Opponents' strength aggregator]\label{def:Sof}
 For fixed $(\vminus,\aminus)$, define
 \[
@@ -15,7 +15,7 @@ For fixed $(\vminus,\aminus)$, define
 The scalar $\Sagg$ aggregates all information about candidate $i$'s opponents that is payoff-relevant for $i$'s primary nomination probability: holding $(v_i,a_i)$ fixed, $\Pr(w=i\mid\vprof,\aprof)$ depends on $(\vminus,\aminus)$ only through $\Sagg$.
 \end{remark*}
 
-\subsection*{Nomination probabilities}
+\subsection{Nomination probabilities}
 \begin{definition}[Reduced-form nomination probability]\label{def:pnomRF}
 Fix $\Sagg>0$. For a candidate with valence $v\in\R$ who chooses action $a\in\{0,1\}$, define the probability of winning the primary as
 \[
@@ -29,11 +29,11 @@ We write
 \]
 \end{definition}
 
-\begin{remark*}
-The reduced-form map $\pnom{a}{v}{\Sagg}$ isolates how a candidate's own $(v,a)$ and the opponents' aggregate strength $\Sagg$ jointly determine the chance of winning the nomination.
-\end{remark*}
 
-\subsection*{General-election win probabilities}
+The reduced-form map $\pnom{a}{v}{\Sagg}$ isolates how a candidate's own $(v,a)$ and the opponents' aggregate strength $\Sagg$ jointly determine the chance of winning the nomination.
+
+
+\subsection{General-election win probabilities}
 \begin{definition}[Reduced-form general-election win probability]\label{def:PgeRF}
 Fix $\delta>0$. For a candidate with valence $v\in\R$ who chose action $a\in\{0,1\}$, define the probability of winning the general election as
 \[
@@ -41,9 +41,9 @@ Fix $\delta>0$. For a candidate with valence $v\in\R$ who chose action $a\in\{0,
 \]
 \end{definition}
 
-\begin{remark*}
+
 The parameter $\delta$ scales the electability penalty from choosing $a=1$ in the primary stage.
-\end{remark*}
+
 
 \subsection*{Expected utility and incentive to take action}
 \begin{definition}[Reduced-form expected utility]\label{def:Urf}
@@ -53,9 +53,9 @@ Fix $(\Sagg,\delta)$ with $\Sagg>0$ and $\delta>0$. Define the expected payoff f
 \]
 \end{definition}
 
-\begin{remark*}
+
 Since office requires winning both stages, $U_a(v;\Sagg,\delta)$ is the reduced-form probability of ultimately winning office when choosing action $a$.
-\end{remark*}
+
 
 \begin{definition}[Utility difference / incentive object]\label{def:Delta}
 Fix $(\Sagg,\delta)$ with $\Sagg>0$ and $\delta>0$. Define
@@ -68,11 +68,11 @@ Fix $(\Sagg,\delta)$ with $\Sagg>0$ and $\delta>0$. Define
 \]
 \end{definition}
 
-\begin{remark*}
-The sign of $\Deltainc{v}{\Sagg}$ determines whether taking action $a=1$ increases a candidate's chance of winning office, holding opponents fixed.
-\end{remark*}
 
-\subsection*{Proportional gain and cost objects}
+The sign of $\Deltainc{v}{\Sagg}$ determines whether taking action $a=1$ increases a candidate's chance of winning office, holding opponents fixed.
+
+
+\subsection{Proportional gain and cost objects}
 \begin{definition}[Proportional nomination gain]\label{def:Gbasic}
 Fix $\Sagg>0$. Define the proportional nomination gain from choosing $a=1$ rather than $a=0$ as
 \[
@@ -80,9 +80,9 @@ Fix $\Sagg>0$. Define the proportional nomination gain from choosing $a=1$ rathe
 \]
 \end{definition}
 
-\begin{remark*}
+
 The object $\Gfun{v}{\Sagg}$ isolates the primary-stage benefit of choosing $a=1$ in proportional terms.
-\end{remark*}
+
 
 \begin{definition}[Proportional electability cost]\label{def:Cbasic}
 Fix $\delta>0$. Define the proportional electability cost of choosing $a=1$ rather than $a=0$ as
@@ -91,6 +91,5 @@ Fix $\delta>0$. Define the proportional electability cost of choosing $a=1$ rath
 \]
 \end{definition}
 
-\begin{remark*}
+
 The object $\Cfun{v}{\delta}$ isolates the general-election penalty of choosing $a=1$ in proportional terms.
-\end{remark*}
